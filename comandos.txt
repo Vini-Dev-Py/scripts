@@ -1,0 +1,51 @@
+Primeiros Comandos:
+
+docker container run hello-world
+
+docker container run debian bash --version
+
+--rm => remove um container
+
+docker container run -it debian bash
+
+-i => modo interativo
+
+-t => ganhar acesso ao terminal do container
+
+// dando nomes aos containers !
+
+docker container run --name mydeb -it debian bash
+
+// --name mydeb //
+
+// Iniciando um container
+
+docker container start -ai mydeb
+
+// start -ai // * o nome é obrigatorio *
+
+// Criando um arquivo no container
+
+touch curso-docker.txt
+
+// touch nome.tipo do arquivo
+
+// listando arquivos do container
+
+ls // lista todos os arquivos 
+
+ls nomeDoArquivo.tipo lista so um arquivo 
+
+// saindo do container
+
+exit
+
+// parando o container
+
+docker container stop + nomeDoContainer 
+
+// Mapeando as portas de um container
+
+docker container run -p 8080:80 nginx
+
+// o termo nginx é a imagem a ser baixada 
