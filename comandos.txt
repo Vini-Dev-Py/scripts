@@ -42,10 +42,64 @@ exit
 
 // parando o container
 
-docker container stop + nomeDoContainer 
+docker container stop + nomeDoContainer ou ContainerID
+
+// rodando o container
+
+docker container start + nomeDoContainer
+
+// vendo os logs do container
+
+docker container logs ex-daemon-basic
+
+// inspecionando o container
+
+docker container inspect ex-daemon-basic
+
+// vendo o os que esta rodando no container
+
+docker container exec ex-daemon-basic uname -or
+
+// restart o container
+
+docker container restart ex-daemon-basic
 
 // Mapeando as portas de um container
 
 docker container run -p 8080:80 nginx
 
 // o termo nginx é a imagem a ser baixada 
+
+// mostrar as imagens 
+
+docker image ls
+
+// mostrar o volume 
+
+docker volume ls
+
+// apagando imagens
+
+docker image rm
+
+// Comandos
+
+docker + (container, image, volume) --help
+
+// realizar o pull da ultima versão de uma imagem
+
+docker image pull redis:latest
+
+
+// Rodar um arquivo HTML !
+
+docker container run -p 8080:80 -v "C:\Programação\docker\Curso\curso-docker\ex-volume\html:/usr/share/nginx/html" nginx
+
+// Rodar em background
+docker container run -d --name ex-daemon-basic -p 8080:80 -v "C:\Programação\docker\Curso\curso-docker\ex-volume\html:/usr/share/nginx/html" nginx
+
+// Explicando o problema // // Terminar //
+ 
+docker container run -p 8080:80 -v $(pwd):/usr/share/nginx/html nginx // esse é o comando indicado para rodar o nosso projeto ! 
+
+// analisando o comandando podemos ver que ele tem uma concatenação "$(pwd):/usr/share/nginx/html"
